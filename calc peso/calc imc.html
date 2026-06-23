@@ -1,101 +1,154 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Calculadora IMC</title>
+    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/imc_cores.css">
+    <style>
+      body {
+        background: linear-gradient(135deg, #EEEDFE 0%, #E1F5EE 100%);
+        min-height: 100vh;
+      }
 
-<html lang="pt-BR"> 
+      #titulo-texto {
+        color: #3C3489;
+        font-weight: 600;
+      }
 
-    <head> 
+      #login {
+        color: #534AB7;
+      }
 
-        <meta charset="UTF-8"> 
+      /* Card do formulário */
+      #formularios {
+        background: #fff;
+        border-radius: 12px;
+        padding: 2rem;
+        box-shadow: 0 2px 16px rgba(127, 119, 221, 0.12);
+        border: 0.5px solid rgba(127, 119, 221, 0.2);
+      }
 
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+      /* Inputs */
+      #email,
+      #senha {
+        border-color: #AFA9EC;
+        background-color: #EEEDFE;
+        color: #3C3489;
+      }
 
-        <title>Calculadora IMC</title> 
+      #email:focus,
+      #senha:focus {
+        border-color: #7F77DD;
+        box-shadow: 0 0 0 3px rgba(127, 119, 221, 0.2);
+        background-color: #fff;
+        outline: none;
+      }
 
-        <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css"> 
+      #email::placeholder,
+      #senha::placeholder {
+        color: #AFA9EC;
+      }
 
-    </head> 
+      /* Botão Entrar */
+      #entra {
+        border-color: #7F77DD;
+        color: #7F77DD;
+        background-color: transparent;
+        width: 100%;
+      }
 
-    <body> 
+      #entra:hover {
+        background-color: #7F77DD;
+        color: #fff;
+      }
 
-        <div class="container d-flex align-items-center justify-content-center" id="corpo" style="min-height: 100vh;"> 
+      /* Botão Cadastrar */
+      #cadastra {
+        background-color: #1D9E75;
+        border-color: #1D9E75;
+        color: #fff;
+        width: 100%;
+      }
 
-            <div class="w-100 py-4"> 
+      #cadastra:hover {
+        background-color: #0F6E56;
+        border-color: #0F6E56;
+      }
 
-                <div class="row justify-content-center mb-4 text-center" id="titulo"> 
+      /* Alerta de erro */
+      #erro {
+        background-color: #FAECE7;
+        border-color: #F0997B;
+        color: #993C1D;
+        border-radius: 8px;
+      }
 
-                    <div class="col-md-auto"> 
+      #erro.alert-success {
+        background-color: #E1F5EE;
+        border-color: #5DCAA5;
+        color: #085041;
+      }
 
-                        <h1 id="titulo-texto">Calculadora IMC</h1> 
+      #erro.alert-warning {
+        background-color: #FAEEDA;
+        border-color: #FAC775;
+        color: #633806;
+      }
+    </style>
+  </head>
 
-                    </div> 
+  <body>
+    <div class="container d-flex align-items-center justify-content-center" id="corpo" style="min-height: 100vh;">
+      <div class="w-100 py-4">
 
-                </div> 
+        <div class="row justify-content-center mb-4 text-center" id="titulo">
+          <div class="col-md-auto">
+            <h1 id="titulo-texto">Calculadora IMC</h1>
+          </div>
+        </div>
 
-                <div class="row justify-content-center align-items-center"> 
+        <div class="row justify-content-center align-items-center">
 
-                    <div class="col-lg-5 col-md-6 text-center mb-4 mb-lg-0" id="imagens"> 
+          
 
-                        <img id="imagens-conteudo" class="img-fluid" style="width:100%;" src="imagens/img1.png" alt="Ilustração da calculadora IMC"> 
+          <div class="col-lg-4 col-md-6 d-flex align-items-center justify-content-center" id="formularios">
+            <form id="form" class="w-100" autocomplete="on">
 
-                    </div> 
+              <div class="mb-3">
+                <h3 id="login">Login</h3>
+              </div>
 
-                    <div class="col-lg-4 col-md-6 d-flex align-items-center justify-content-center" id="formularios"> 
+              <div class="input-group mb-3">
+                <input id="email" name="email" type="email" placeholder="E-mail" class="form-control">
+              </div>
 
-                        <form id="form" class="w-100" autocomplete="on"> 
+              <div class="input-group mb-3">
+                <input id="senha" name="senha" type="password" placeholder="Senha" class="form-control">
+              </div>
 
-                            <div class="mb-3"> 
+              <div class="mb-3">
+                <button id="entra" name="entra" type="button" class="btn btn-outline-primary btn-lg btn-block">Entrar</button>
+              </div>
 
-                                <h3 id="login">Login</h3> 
+              <div class="mb-3">
+                <button id="cadastra" name="cadastra" type="button" class="btn btn-success btn-lg btn-block">Cadastrar</button>
+              </div>
 
-                            </div> 
+              <div id="erro" class="alert alert-dark invisible mb-0" role="alert"></div>
 
-                            <div class="input-group mb-3"> 
+            </form>
+          </div>
 
-                                <input id="email" name="email" type="email" placeholder="E-mail" class="form-control"> 
+        </div>
+      </div>
+    </div>
 
-                            </div> 
+    <!-- CORRIGIDO: ordem de carregamento correta -->
+    <script src="js/imc_register.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/auth_peso.js"></script>
 
-                            <div class="input-group mb-3"> 
-
-                                <input id="senha" name="senha" type="password" placeholder="Senha" class="form-control"> 
-
-                            </div> 
-
-                            <div class="mb-3"> 
-
-                                <button id="entra" name="entra" type="button" class="btn btn-outline-primary btn-lg btn-block">Entrar</button> 
-
-                            </div> 
-
-                            <div class="mb-3"> 
-
-                                <button id="cadastra" name="cadastra" type="button" class="btn btn-success btn-lg btn-block">Cadastrar</button> 
-
-                            </div> 
-
-                            <div id="erro" class="alert alert-dark invisible mb-0" role="alert"></div> 
-
-                        </form> 
-
-                    </div> 
-
-                </div> 
-
-            </div> 
-
-        </div> 
-
- 
-
-        <script src="js/db.js"></script> 
-
-        <script src="js/auth.js"></script> 
-
-         
-
-    </body> 
-
-</html> 
-
- 
-
- 
+  </body>
+</html>
