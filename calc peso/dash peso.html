@@ -1,0 +1,259 @@
+<!DOCTYPE html> 
+
+<html lang="pt-BR"> 
+
+<head> 
+
+    <meta charset="UTF-8"> 
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+
+    <title>Calculadora IMC - Dashboard Simples</title> 
+
+    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css"> 
+
+</head> 
+
+<body> 
+
+    <div class="container d-flex align-items-center justify-content-center" id="dashboard-page-simples" style="min-height: 100vh;"> 
+
+        <div class="w-100 py-4"> 
+
+            <div class="row justify-content-center mb-4 text-center"> 
+
+                <div class="col-md-auto"> 
+
+                    <h1>Calculadora IMC</h1> 
+
+                    <p class="text-muted mb-0">Dashboard simples de evolução do usuário</p> 
+
+                </div> 
+
+            </div> 
+
+ 
+
+            <div class="row justify-content-center align-items-stretch"> 
+
+                <div class="col-xl-3 col-lg-4 col-md-10 mb-4"> 
+
+                    <div class="border rounded shadow-sm bg-white p-4 h-100"> 
+
+                        <div class="text-center mb-4"> 
+
+                            <img src="imagens/img3.png" alt="Painel de evolução" class="img-fluid mb-3" style="max-height: 220px;"> 
+
+                            <h4 class="mb-1">Seu acompanhamento</h4> 
+
+                            <p class="text-muted mb-0">Versão mais simples para estudar o fluxo do dashboard.</p> 
+
+                        </div> 
+
+ 
+
+                        <div id="dashboard-alerta" class="alert alert-secondary small">Carregando dados do usuário...</div> 
+
+ 
+
+                        <div class="form-group mb-2"> 
+
+                            <label for="dashboard-nome">Nome</label> 
+
+                            <input id="dashboard-nome" type="text" class="form-control" readonly> 
+
+                        </div> 
+
+ 
+
+                        <div class="form-group mb-2"> 
+
+                            <label for="dashboard-idade">Idade</label> 
+
+                            <input id="dashboard-idade" type="text" class="form-control" readonly> 
+
+                        </div> 
+
+ 
+
+                        <div class="form-group mb-2"> 
+
+                            <label for="dashboard-sexo">Sexo</label> 
+
+                            <input id="dashboard-sexo" type="text" class="form-control" readonly> 
+
+                        </div> 
+
+ 
+
+                        <div class="form-group mb-2"> 
+
+                            <label for="dashboard-objetivo">Objetivo</label> 
+
+                            <input id="dashboard-objetivo" type="text" class="form-control" readonly> 
+
+                        </div> 
+
+ 
+
+                        <div class="form-group mb-2"> 
+
+                            <label for="dashboard-total-afericoes">Total de aferições</label> 
+
+                            <input id="dashboard-total-afericoes" type="text" class="form-control" readonly> 
+
+                        </div> 
+
+ 
+
+                        <div class="form-group mb-4"> 
+
+                            <label for="dashboard-evolucao">Resumo da evolução</label> 
+
+                            <textarea id="dashboard-evolucao" class="form-control" rows="5" readonly></textarea> 
+
+                        </div> 
+
+ 
+
+                        <button id="dashboard-voltar" type="button" class="btn btn-outline-primary btn-lg btn-block">Voltar para aferição</button> 
+
+                        <button id="dashboard-logout" type="button" class="btn btn-outline-danger btn-lg btn-block mt-3">Sair</button> 
+
+                    </div> 
+
+                </div> 
+
+ 
+
+                <div class="col-xl-8 col-lg-8 col-md-10 mb-4"> 
+
+                    <div class="border rounded shadow-sm bg-white p-4 mb-4"> 
+
+                        <h3 class="mb-3">Resumo da última aferição</h3> 
+
+                        <div class="row"> 
+
+                            <div class="col-md-3 mb-3"> 
+
+                                <label for="resumo-data">Data</label> 
+
+                                <input id="resumo-data" type="text" class="form-control" readonly> 
+
+                            </div> 
+
+                            <div class="col-md-3 mb-3"> 
+
+                                <label for="resumo-imc">IMC</label> 
+
+                                <input id="resumo-imc" type="text" class="form-control" readonly> 
+
+                            </div> 
+
+                            <div class="col-md-3 mb-3"> 
+
+                                <label for="resumo-ca">Circunferência</label> 
+
+                                <input id="resumo-ca" type="text" class="form-control" readonly> 
+
+                            </div> 
+
+                            <div class="col-md-3 mb-3"> 
+
+                                <label for="resumo-risco">Avaliação geral</label> 
+
+                                <input id="resumo-risco" type="text" class="form-control" readonly> 
+
+                            </div> 
+
+                        </div> 
+
+                    </div> 
+
+ 
+
+                    <div class="border rounded shadow-sm bg-white p-4 mb-4"> 
+
+                        <h3 class="mb-3">Histórico de aferições</h3> 
+
+                        <div class="table-responsive"> 
+
+                            <table class="table table-bordered table-hover mb-0"> 
+
+                                <thead class="thead-light"> 
+
+                                    <tr> 
+
+                                        <th>Data</th> 
+
+                                        <th>Altura</th> 
+
+                                        <th>Ganho/Perda de massa</th> 
+
+                                        <th>Circunferência abdominal</th> 
+
+                                        <th>Avaliação geral</th> 
+
+                                    </tr> 
+
+                                </thead> 
+
+                                <tbody id="dashboard-tabela-body"></tbody> 
+
+                            </table> 
+
+                        </div> 
+
+                    </div> 
+
+ 
+
+                    <div class="row"> 
+
+                        <div class="col-lg-6 mb-4"> 
+
+                            <div class="border rounded shadow-sm bg-white p-4 h-100"> 
+
+                                <div style="height: 320px;"> 
+
+                                    <canvas id="grafico-imc"></canvas> 
+
+                                </div> 
+
+                            </div> 
+
+                        </div> 
+
+ 
+
+                        <div class="col-lg-6 mb-4"> 
+
+                            <div class="border rounded shadow-sm bg-white p-4 h-100"> 
+
+                                <div style="height: 320px;"> 
+
+                                    <canvas id="grafico-ca"></canvas> 
+
+                                </div> 
+
+                            </div> 
+
+                        </div> 
+
+                    </div> 
+
+                </div> 
+
+            </div> 
+
+        </div> 
+
+    </div> 
+
+</body> 
+
+</html> 
+
+ 
+
+ 

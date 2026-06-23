@@ -1,0 +1,173 @@
+ 
+
+<!DOCTYPE html> 
+
+<html lang="pt-BR"> 
+
+<head> 
+
+  <meta charset="UTF-8" /> 
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+
+  <title>Cadastro — Sistema IMC</title> 
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" /> 
+
+</head> 
+
+<body class="bg-light"> 
+
+ 
+
+  <div class="container py-5"> 
+
+    <div class="row justify-content-center"> 
+
+      <div class="col-12 col-md-7 col-lg-6"> 
+
+ 
+
+        <div class="card shadow"> 
+
+          <div class="card-body p-4"> 
+
+ 
+
+            <div class="text-center mb-4"> 
+
+              <span style="font-size: 2.5rem;">📋</span> 
+
+              <h1 class="h4 fw-bold mt-2 mb-0">Criar Conta</h1> 
+
+              <p class="text-muted small">Preencha os dados para se cadastrar</p> 
+
+            </div> 
+
+ 
+
+            <div id="alerta" class="alert d-none" role="alert"></div> 
+
+ 
+
+            <div class="mb-3"> 
+
+              <label for="nome" class="form-label fw-semibold">Nome completo</label> 
+
+              <input type="text" id="nome" class="form-control" placeholder="Seu nome" /> 
+
+            </div> 
+
+ 
+
+            <div class="mb-3"> 
+
+              <label for="email" class="form-label fw-semibold">E-mail</label> 
+
+              <input type="email" id="email" class="form-control" placeholder="seu@email.com" /> 
+
+            </div> 
+
+ 
+
+            <div class="row"> 
+
+              <div class="col-6 mb-3"> 
+
+                <label for="senha" class="form-label fw-semibold">Senha</label> 
+
+                <input type="password" id="senha" class="form-control" placeholder="Mínimo 4 dígitos" /> 
+
+              </div> 
+
+              <div class="col-6 mb-3"> 
+
+                <label for="confirmarSenha" class="form-label fw-semibold">Confirmar</label> 
+
+                <input type="password" id="confirmarSenha" class="form-control" placeholder="Repita" /> 
+
+              </div> 
+
+            </div> 
+
+ 
+
+            <div class="row"> 
+
+              <div class="col-6 mb-3"> 
+
+                <label for="sexo" class="form-label fw-semibold">Sexo biológico</label> 
+
+                <select id="sexo" class="form-select"> 
+
+                  <option value="">— selecione —</option> 
+
+                  <option value="M">Masculino</option> 
+
+                  <option value="F">Feminino</option> 
+
+                </select> 
+
+              </div> 
+
+              <div class="col-6 mb-3"> 
+
+                <label for="dataNasc" class="form-label fw-semibold">Nascimento</label> 
+
+                <input type="date" id="dataNasc" class="form-control" /> 
+
+              </div> 
+
+            </div> 
+
+ 
+
+            <div class="alert alert-warning py-2 px-3 small mb-3"> 
+
+              ⚠️ <strong>Nota didática:</strong> dados ficam apenas no seu navegador (localStorage). 
+
+              A senha usa Base64, <strong>não é criptografia real</strong>. Em produção, use backend + HTTPS. 
+
+            </div> 
+
+ 
+
+            <button id="btn-cadastrar" class="btn btn-success w-100 fw-semibold"> 
+
+              Criar minha conta 
+
+            </button> 
+
+ 
+
+            <div class="text-center mt-3"> 
+
+              <small class="text-muted"> 
+
+                Já tem conta? 
+
+                <a href="index.html" class="text-success fw-semibold">Fazer login</a> 
+
+              </small> 
+
+            </div> 
+
+ 
+
+          </div> 
+
+        </div> 
+
+ 
+
+      </div> 
+
+    </div> 
+
+  </div> 
+
+</body> 
+
+</html> 
+
+ 

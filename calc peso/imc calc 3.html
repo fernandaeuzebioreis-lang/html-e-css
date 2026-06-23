@@ -1,0 +1,149 @@
+<!DOCTYPE html> 
+
+<html lang="pt-BR"> 
+
+    <head> 
+
+        <meta charset="UTF-8"> 
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+
+        <title>Calculadora IMC</title> 
+
+        <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css"> 
+
+    </head> 
+
+    <body> 
+
+        <div class="container d-flex align-items-center justify-content-center" id="corpo" style="min-height: 100vh;"> 
+
+            <div class="w-100 py-4"> 
+
+                <div class="row justify-content-center mb-4 text-center" id="titulo"> 
+
+                    <div class="col-md-auto"> 
+
+                        <h1 id="titulo-texto">Calculadora IMC</h1> 
+
+                    </div> 
+
+                </div> 
+
+                <div class="row justify-content-center align-items-center"> 
+
+                    <div class="col-lg-5 col-md-6 text-center mb-4 mb-lg-0" id="imagens"> 
+
+                        <img id="imagens-conteudo" class="img-fluid" style="width:100%;" src="imagens/img2.png" alt="Ilustração de cadastro"> 
+
+                    </div> 
+
+                    <div class="col-lg-4 col-md-6 d-flex align-items-center justify-content-center" id="formularios"> 
+
+                        <form id="form" class="w-100" autocomplete="on"> 
+
+                            <div class="mb-3"> 
+
+                                <h3 id="cadastro">Cadastre-se</h3> 
+
+                            </div> 
+
+                            <div class="input-group mb-3"> 
+
+                                <input id="email" name="email" type="email" placeholder="E-mail" class="form-control"> 
+
+                            </div> 
+
+                            <div class="input-group mb-3"> 
+
+                                <input id="senha" name="senha" type="password" placeholder="Senha" class="form-control"> 
+
+                            </div> 
+
+                            <div class="input-group mb-3"> 
+
+                                <input id="resenha" name="resenha" type="password" placeholder="Repetir senha" class="form-control"> 
+
+                            </div> 
+
+                            <div class="input-group mb-3"> 
+
+                                <input id="nome" name="nome" type="text" placeholder="Nome completo" class="form-control"> 
+
+                            </div> 
+
+                            <div class="custom-control custom-radio custom-control-inline"> 
+
+                                <input type="radio" id="genero-masculino" name="genero" class="custom-control-input" value="0"> 
+
+                                <label class="custom-control-label" for="genero-masculino">Masculino</label> 
+
+                            </div> 
+
+                            <div class="custom-control custom-radio custom-control-inline mb-3"> 
+
+                                <input type="radio" id="genero-feminino" name="genero" class="custom-control-input" value="1"> 
+
+                                <label class="custom-control-label" for="genero-feminino">Feminino</label> 
+
+                            </div> 
+
+                            <div class="input-group mb-3"> 
+
+                                <input id="nascimento" name="nascimento" type="date" class="form-control"> 
+
+                            </div> 
+
+                            <div class="input-group mb-3"> 
+
+                                <select id="objetivo" name="objetivo" class="form-control"> 
+
+                                    <option value="" selected disabled>Objetivo</option> 
+
+                                    <option value="ganhar_massa">Ganhar massa</option> 
+
+                                    <option value="reduzir_massa">Reduzir massa</option> 
+
+                                </select> 
+
+                            </div> 
+
+                            <div class="mb-3"> 
+
+                                <button id="salva" name="salva" type="button" class="btn btn-success btn-lg btn-block">Salvar</button> 
+
+                            </div> 
+
+                            <div class="mb-3"> 
+
+                                <button id="voltar" name="voltar" type="button" class="btn btn-danger btn-lg btn-block">Voltar</button> 
+
+                            </div> 
+
+                            <div id="erro" class="alert alert-danger invisible mb-0" role="alert">As senhas não conferem</div> 
+
+                        </form> 
+
+                    </div> 
+
+                </div> 
+
+            </div> 
+
+        </div> 
+
+ 
+
+        <script src="js/db.js"></script> 
+
+        <script src="js/auth.js"></script> 
+
+     
+
+    </body> 
+
+</html> 
+
+ 
+
+ 

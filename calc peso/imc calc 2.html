@@ -1,0 +1,349 @@
+<!DOCTYPE html> 
+
+<html lang="pt-BR"> 
+
+    <head> 
+
+        <meta charset="UTF-8"> 
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+
+        <title>Calculadora IMC - Aferição</title> 
+
+        <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css"> 
+
+    </head> 
+
+    <body> 
+
+        <div class="container d-flex align-items-center justify-content-center" id="corpo" style="min-height: 100vh;"> 
+
+            <div class="w-100 py-4"> 
+
+                <div class="row justify-content-center mb-4 text-center" id="titulo"> 
+
+                    <div class="col-md-auto"> 
+
+                        <h1 id="titulo-texto">Calculadora IMC</h1> 
+
+                        <p class="text-muted mb-0">Tela de aferição corporal</p> 
+
+                    </div> 
+
+                </div> 
+
+ 
+
+                <div class="row justify-content-center align-items-stretch"> 
+
+                    <div class="col-xl-3 col-lg-4 col-md-10 mb-4" id="imagens"> 
+
+                        <div class="h-100 border rounded shadow-sm bg-white p-3 d-flex flex-column justify-content-center text-center"> 
+
+                            <img 
+
+                                id="imagens-conteudo" 
+
+                                class="img-fluid mx-auto mb-3" 
+
+                                style="max-width: 100%;" 
+
+                                src="imagens/img3.png" 
+
+                                alt="Ilustração da área de aferição" 
+
+                            > 
+
+                            <h4 class="mb-2">Nova aferição</h4> 
+
+                            <p class="text-muted mb-0"> 
+
+                                Preencha os dados corporais para calcular o IMC e visualizar o quadro de risco. 
+
+                            </p> 
+
+                        </div> 
+
+                    </div> 
+
+ 
+
+                    <div class="col-xl-4 col-lg-4 col-md-10 mb-4" id="formularios"> 
+
+                        <div class="h-100 border rounded shadow-sm bg-white p-4"> 
+
+                            <form id="form-afericao" autocomplete="on"> 
+
+                                <input id="nome" name="nome" type="hidden" value=""> 
+
+ 
+
+                                <div class="mb-3"> 
+
+                                    <h3 class="mb-1">Dados da aferição</h3> 
+
+                                    <p class="text-muted mb-0">Nesta etapa serão coletadas apenas as informações da avaliação física.</p> 
+
+                                </div> 
+
+ 
+
+                                <div class="input-group mb-3"> 
+
+                                    <input id="data-afericao" name="data_afericao" type="date" class="form-control"> 
+
+                                </div> 
+
+ 
+
+                                <div class="input-group mb-3"> 
+
+                                    <input id="massa" name="massa" type="text" placeholder="Massa corporal - ex: 75.3" class="form-control"> 
+
+                                    <div class="input-group-append"> 
+
+                                        <span class="input-group-text">kg</span> 
+
+                                    </div> 
+
+                                </div> 
+
+ 
+
+                                <div class="input-group mb-3"> 
+
+                                    <input id="altura" name="altura" type="text" placeholder="Altura - ex: 1.75" class="form-control"> 
+
+                                    <div class="input-group-append"> 
+
+                                        <span class="input-group-text">m</span> 
+
+                                    </div> 
+
+                                </div> 
+
+ 
+
+                                <div class="input-group mb-4"> 
+
+                                    <input id="circunferencia" name="circunferencia" type="text" placeholder="Circunferência abdominal - ex: 88" class="form-control"> 
+
+                                    <div class="input-group-append"> 
+
+                                        <span class="input-group-text">cm</span> 
+
+                                    </div> 
+
+                                </div> 
+
+ 
+
+                                <div class="row"> 
+
+                                    <div class="col-sm-6 mb-3"> 
+
+                                        <button id="calcula" name="calcula" type="button" class="btn btn-outline-primary btn-lg btn-block"> 
+
+                                            Calcular IMC 
+
+                                        </button> 
+
+                                    </div> 
+
+                                    <div class="col-sm-6 mb-3"> 
+
+                                        <button id="limpar" name="limpar" type="reset" class="btn btn-outline-secondary btn-lg btn-block"> 
+
+                                            Limpar campos 
+
+                                        </button> 
+
+                                    </div> 
+
+                                </div> 
+
+ 
+
+                                <div class="mt-3 pt-3 border-top"> 
+
+                                    <button id="salva-imc" name="salva-imc" type="button" class="btn btn-warning btn-lg btn-block" disabled> 
+
+                                        Salvar aferição 
+
+                                    </button> 
+
+                                    <small class="form-text text-muted text-center mt-2"> 
+
+                                        O botão será liberado após o preenchimento dos campos e a execução dos cálculos. 
+
+                                    </small> 
+
+                                </div> 
+
+                            </form> 
+
+                        </div> 
+
+                    </div> 
+
+ 
+
+                    <div class="col-xl-4 col-lg-4 col-md-10 mb-4" id="painel-afericao"> 
+
+                        <div class="border rounded shadow-sm bg-white p-4 mb-4" id="quadro-resultado"> 
+
+                            <div class="d-flex justify-content-between align-items-center mb-3"> 
+
+                                <h3 class="mb-0">Quadro da avaliação</h3> 
+
+                                <span class="badge badge-secondary">Aguardando cálculo</span> 
+
+                            </div> 
+
+ 
+
+                            <div class="form-group row mb-2"> 
+
+                                <label for="idade-visual" class="col-sm-5 col-form-label">Idade</label> 
+
+                                <div class="col-sm-7"> 
+
+                                    <input id="idade-visual" name="idade_visual" type="text" class="form-control" value="" placeholder="Será exibida aqui" readonly> 
+
+                                </div> 
+
+                            </div> 
+
+ 
+
+                            <div class="form-group row mb-2"> 
+
+                                <label for="objetivo-visual" class="col-sm-5 col-form-label">Objetivo</label> 
+
+                                <div class="col-sm-7"> 
+
+                                    <input id="objetivo-visual" name="objetivo_visual" type="text" class="form-control" value="" placeholder="Será exibido aqui" readonly> 
+
+                                </div> 
+
+                            </div> 
+
+ 
+
+                            <div class="form-group row mb-2"> 
+
+                                <label for="imc" class="col-sm-5 col-form-label">IMC</label> 
+
+                                <div class="col-sm-7"> 
+
+                                    <input id="imc" name="imc" type="text" class="form-control" value="" placeholder="Resultado do cálculo" readonly> 
+
+                                </div> 
+
+                            </div> 
+
+ 
+
+                            <div class="form-group row mb-2"> 
+
+                                <label for="status-imc-visual" class="col-sm-5 col-form-label">Status do IMC</label> 
+
+                                <div class="col-sm-7"> 
+
+                                    <input id="status-imc-visual" name="status_imc_visual" type="text" class="form-control" value="" placeholder="Será exibido aqui" readonly> 
+
+                                </div> 
+
+                            </div> 
+
+ 
+
+                            <div class="form-group row mb-2"> 
+
+                                <label for="risco-circunferencia-visual" class="col-sm-5 col-form-label">Risco abdominal</label> 
+
+                                <div class="col-sm-7"> 
+
+                                    <input id="risco-circunferencia-visual" name="risco_circunferencia_visual" type="text" class="form-control" value="" placeholder="Será exibido aqui" readonly> 
+
+                                </div> 
+
+                            </div> 
+
+ 
+
+                            <div class="form-group row mb-0"> 
+
+                                <label for="risco-geral-visual" class="col-sm-5 col-form-label">Risco geral</label> 
+
+                                <div class="col-sm-7"> 
+
+                                    <input id="risco-geral-visual" name="risco_geral_visual" type="text" class="form-control" value="" placeholder="Será exibido aqui" readonly> 
+
+                                </div> 
+
+                            </div> 
+
+ 
+
+                            <div id="status" class="alert alert-secondary mt-3 mb-0" role="alert"> 
+
+                                A lógica de cálculo e classificação será conectada depois. 
+
+                            </div> 
+
+                        </div> 
+
+ 
+
+                        <div class="border rounded shadow-sm bg-white p-4 text-center" id="painel-status"> 
+
+                            <h4 class="mb-3">Representação visual do status</h4> 
+
+                            <img 
+
+                                id="imagens-status" 
+
+                                class="img-fluid mb-3" 
+
+                                style="max-height: 230px;" 
+
+                                src="imagens/statusM/status1M.png" 
+
+                                alt="Área reservada para a imagem vetorial do status" 
+
+                            > 
+
+                            <p class="text-muted mb-0"> 
+
+                                Esta área exibirá a silhueta correspondente ao resultado do IMC e à lógica de negócio definida depois. 
+
+                            </p> 
+
+                        </div> 
+
+                    </div> 
+
+                </div> 
+
+            </div> 
+
+        </div> 
+
+ 
+
+        <script src="js/db.js"></script> 
+
+        <script src="js/auth.js"></script> 
+
+        <script src="js/measurements.js"></script> 
+
+        
+
+    </body> 
+
+</html> 
+
+ 
+
+ 
