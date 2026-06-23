@@ -1,0 +1,59 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Document</title> 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</head> 
+<body>
+    <form action="executar" method="POST">
+      <h2> Formulário de despesas de viagem</h2>
+      <div>
+        <label for="despesa">Despesa: </label><br>
+        <input type="text" id="despesa" name="despesa" placeholder="ex. passagem aérea">
+        </div>
+        <br>
+        <div>
+            <label for="despesa">Valor (R$): </label><br>
+        <input type="number" id="valor" name="valor" step="0.01" placeholder="ex. 53.18">
+    </div>
+        
+            <br>
+            <div>
+            <label for="despesa">Categoria: </label><br>
+            <select id="categoria" name="categoria">
+                <option value="" disabled selected>Selecione uma das opções abaixo</option>
+                <option value="alimentação">Alimentação</option>
+                <option value="transporte">Transporte</option>
+                <option value="hospedagem">Hospedagem</option>
+                <option value="lazer">Lazer</option>
+                <option value="outros">Outros</option>
+
+            </select>
+            </div>
+
+            
+                <br>
+                <div>
+                <label for="data">Data: </label><br>
+                <input type="date" id="data" name="data">
+                
+                  <br>
+                  <div>
+                 <label for="recibo">Recibo: </label><br>
+                 <input type="file" id="recibo" name="recibo" accept=".pdf, .jpg">
+                </div>
+                <br>
+                <div>
+                    <label for="reembolsavel">Reembolsavel: </label><br>
+                 <input type="checkbox" id="reembolsavel" name="rembolsavel">
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+                <button type="submit" class="btn btn-success">Enviado</button>
+                <button type="menu" class="btn btn-info">informações</button>
+                <button type="reset" class="btn btn-light">Limpar Formulário</button>
+            </form>
+</body>
+</html>
