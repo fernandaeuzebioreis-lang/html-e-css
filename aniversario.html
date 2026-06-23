@@ -1,0 +1,193 @@
+<!DOCTYPE html> 
+
+<html lang="pt-BR"> 
+
+<head> 
+
+  <meta charset="UTF-8"> 
+
+  <title>Feliz Aniversário</title> 
+
+  <style> 
+
+    body { 
+
+      display: flex; 
+
+      flex-direction: column; 
+
+      justify-content: center; 
+
+      align-items: center; 
+
+      height: 100vh; 
+
+      background: #fff0f5; 
+
+      font-family: 'Arial', sans-serif; 
+
+    } 
+
+ 
+
+    /* Bolo */ 
+
+    .bolo { 
+
+      position: relative; 
+
+      width: 200px; 
+
+      height: 150px; 
+
+      background: #ffb6c1; 
+
+      border-radius: 10px; 
+
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
+
+    } 
+
+ 
+
+    /* Camada superior */ 
+
+    .topo { 
+
+      position: absolute; 
+
+      top: -40px; 
+
+      left: 20px; 
+
+      width: 160px; 
+
+      height: 40px; 
+
+      background: #fffacd; 
+
+      border-radius: 10px 10px 0 0; 
+
+    } 
+
+ 
+
+    /* Velas */ 
+
+    .vela { 
+
+      position: absolute; 
+
+      width: 10px; 
+
+      height: 30px; 
+
+      background: #87cefa; 
+
+      top: -30px; 
+
+      border-radius: 3px; 
+
+    } 
+
+    .vela:nth-child(1) { left: 40px; } 
+
+    .vela:nth-child(2) { left: 95px; } 
+
+    .vela:nth-child(3) { left: 150px; } 
+
+ 
+
+    /* Chamas */ 
+
+    .chama { 
+
+      position: absolute; 
+
+      width: 12px; 
+
+      height: 12px; 
+
+      background: orange; 
+
+      border-radius: 50%; 
+
+      top: -12px; 
+
+      left: -1px; 
+
+      animation: piscar 1s infinite alternate; 
+
+    } 
+
+ 
+
+    @keyframes piscar { 
+
+      from { transform: scale(1); opacity: 1; } 
+
+      to { transform: scale(1.3); opacity: 0.6; } 
+
+    } 
+
+ 
+
+    h1 { 
+
+      color: #d6336c; 
+
+      font-size: 2.5em; 
+
+      margin-top: 30px; 
+
+      text-shadow: 2px 2px 5px #ffb3c6; 
+
+    } 
+
+ 
+
+    p { 
+
+      color: #333; 
+
+      font-size: 1.2em; 
+
+      margin-top: 10px; 
+
+    } 
+
+  </style> 
+
+</head> 
+
+<body> 
+
+  <!-- Bolo --> 
+
+  <div class="bolo"> 
+
+    <div class="topo"></div> 
+
+    <div class="vela"><div class="chama"></div></div> 
+
+    <div class="vela"><div class="chama"></div></div> 
+
+    <div class="vela"><div class="chama"></div></div> 
+
+  </div> 
+
+ 
+
+  <!-- Mensagem --> 
+
+  <h1>🎉 Feliz Aniversário!</h1> 
+
+  <p>Que seu dia seja doce como este bolo e cheio de alegria!</p> 
+
+</body> 
+
+</html> 
+
+ 
+
+ 
